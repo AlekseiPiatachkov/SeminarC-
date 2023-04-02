@@ -38,7 +38,7 @@ PrintArray(arr);
 
 /* Дан текст. В тексте нужно все пробелы заменить вертикальной чёрточной, маленькие буквы "к" 
 заменить на большие буквы "К", а большие буквы "С" заменить на маленькие буквы "с".
-*/
+
 
 string text = " - Я думаю, - сказал князь, улыбаясь, что,"
             + " ежели бы вас послали вместо нашего милого Винценгероде"
@@ -70,3 +70,23 @@ Console.WriteLine(newText);
 Console.WriteLine();
 newText = Replase(newText, ' ', '|');
 Console.WriteLine(newText);
+
+
+int[] a = { 10, 18, 2, 5, 55, 46, 32, 54, 89, 21 };
+
+void SelectionSoft(int[] array)
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int maxPosition = i;
+        for (int j = j + 1; j < array.Length; j++)
+        {
+            if (array[j] > array[maxPosition]) maxPosition = j;
+        }
+         int temporary = array[i];
+         array[i] = array[maxPosition];
+         array[maxPosition] = temporary;
+    }
+}
+*/
+
