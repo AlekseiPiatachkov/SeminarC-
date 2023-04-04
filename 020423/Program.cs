@@ -238,7 +238,7 @@ void PrintArray(int[] array)
 /* Задача 29: Напишите программу, которая задаёт массив из 8 
 элементов и выводит их на экран.
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
-6, 1, 33 -> [6, 1, 33] */
+6, 1, 33 -> [6, 1, 33] 
 
 Console.WriteLine("Введите весемь элементов массива: ");
 int a = int.Parse(Console.ReadLine());
@@ -279,5 +279,65 @@ void FillArray(int[] collection)
         index++;
     }
 }
-*/
 
+int year = Method3();
+
+Console.WriteLine(year);
+
+int Method3()
+{
+    return DateTime.Now.Year;
+}
+
+Console.WriteLine("Введите необходимое число: ");
+int count = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Введите необходимый текс: ");
+string text = Console.ReadLine();
+
+string res = Method4(count, text);
+Console.WriteLine(res);
+
+string Method4(int count, string text)
+{
+    int index = 0;
+    string result = string.Empty;
+    while (index < count)
+    {
+        result = result + text;
+        index++;
+    }
+    return result;
+}
+
+void Method1()
+{
+    Console.WriteLine("Текст сообщения");
+}
+
+Method1(); 
+
+Console.WriteLine("Введите необходимый текс: ");
+
+string msg = Console.ReadLine();
+Method2(msg);
+Console.WriteLine(msg);
+
+void Method2(string msg)
+{
+    Console.WriteLine(msg);
+} 
+
+
+Method21(4, "Добро пожаловать");
+
+void Method21(int count, string text)
+{
+    int i = 0;
+    while (i < count)
+    {
+        Console.WriteLine(text);
+        i++;
+    }
+}
+*/
