@@ -355,10 +355,6 @@ for (int i = 2; i <= 10; i++)
 /* Дан текст. В тексте нужно все пробелы заменить вертикальной чёрточной, маленькие буквы "к" 
 заменить на большие буквы "К", а большие буквы "С" заменить на маленькие буквы "с".
 
-*/
-
-
-
 
 string text = " - Я думаю, - сказал князь, улыбаясь, что,"
             + " ежели бы вас послали вместо нашего милого Винценгероде"
@@ -382,3 +378,105 @@ string newText = ChengeText(text,' ', '|');
 Console.WriteLine(newText);
 newText = ChengeText(newText,'к', 'К');
 Console.WriteLine(newText);
+*/
+
+
+
+/* 
+Задача 28: Напишите программу, которая принимает на вход число N и 
+выдаёт произведение чисел от 1 до N.
+4 -> 24 5 -> 120
+
+Console.WriteLine("Введите число N ");
+int n = int.Parse(Console.ReadLine());
+
+Console.Write($"{n} -> ");
+Console.Write(FillProdact(n));
+
+
+int FillProdact(int n)
+{
+    int result = 1;
+    for (int i = 1; i < n; i++)
+    {
+        result = result * i + result;
+    }
+    return result;
+}
+
+
+Задача 30: Напишите программу, которая выводит массив из 8 элементов,
+ заполненный нулями и единицами в случайном порядке.
+[1,0,1,1,0,1,0,0] 
+
+int[] array = new int[8];
+FillArray(array);
+PrintArray(array);
+
+void FillArray(int[] array)
+{
+    int length = array.Length;
+    for (int i = 0; i < length; i++)
+    {
+        array[i] = new Random().Next(0, 2);
+    }
+}
+
+void PrintArray(int[] array)
+{
+    int length = array.Length;
+    for (int i = 0; i < length; i++)
+    {
+        Console.Write($" {array[i]} ");
+    }
+}
+*/
+
+int[] arr = { 21, 12, 32, 14, 57, 67, 12, 91, 11, 4 };
+
+//SelectionSoft(arr);
+SelectionMaxSoft(arr);
+PrintArray(arr);
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($" {array[i]} ");
+    }
+    Console.WriteLine();
+}
+
+/* void SelectionSoft(int[] array)
+{
+
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+        for (int j  = i + 1; j < array.Length; j++)
+        {
+             if(array[j] < array[minPosition])
+             minPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
+}
+*/
+void SelectionMaxSoft(int[] array)
+{
+
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int maxPosition = i;
+        for (int j  = i + 1; j < array.Length; j++)
+        {
+             if(array[j] > array[maxPosition])
+             maxPosition = j;
+        }
+        int temporary = array[i];
+        array[i] = array[maxPosition];
+        array[maxPosition] = temporary;
+    }
+}
